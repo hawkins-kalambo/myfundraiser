@@ -2,7 +2,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
-import { FaUniversity, FaWhatsapp } from "react-icons/fa";
+import { FaWhatsapp } from "react-icons/fa";
 
 export default function Home() {
   const [showPdf, setShowPdf] = useState(false);
@@ -11,12 +11,30 @@ export default function Home() {
     <div>
       <Navbar />
       <main className="pt-20 max-w-4xl mx-auto px-6">
+        {/* Profile Section */}
+        <section className="flex flex-col items-center text-center mb-10">
+          <Image
+            src="/profile.jpg"
+            alt="Hawkins Kalambo"
+            width={150}
+            height={150}
+            className="rounded-full shadow-lg object-cover"
+            priority
+          />
+          <h2 className="mt-4 text-2xl sm:text-3xl font-bold text-gray-800">
+            Hawkins Kalambo
+          </h2>
+          <p className="text-gray-600 text-sm sm:text-base">
+            Aspiring Renewable Energy Engineer
+          </p>
+        </section>
+
         {/* Hero Section */}
         <section className="text-center mb-16">
-          <h1 className="text-4xl font-bold text-indigo-600 mb-4">
+          <h1 className="text-3xl sm:text-4xl font-bold text-indigo-600 mb-4">
             Welcome to My Fundraising Journey
           </h1>
-          <p className="text-gray-700 text-lg mb-6">
+          <p className="text-gray-700 text-base sm:text-lg mb-6">
             I’m raising funds to pursue my Bachelor of Science (Honors) in
             Renewable Energy Systems Engineering at Mzuzu University.
           </p>
@@ -29,7 +47,10 @@ export default function Home() {
         </section>
 
         {/* Story Section */}
-        <section id="about" className="bg-white shadow-md rounded-2xl p-8 mb-16">
+        <section
+          id="about"
+          className="bg-white shadow-md rounded-2xl p-8 mb-16"
+        >
           <h2 className="text-2xl font-semibold text-indigo-600 mb-4">
             My Story
           </h2>
@@ -81,7 +102,6 @@ export default function Home() {
             </button>
           ) : (
             <div className="relative">
-              {/* Small Close X Button */}
               <button
                 onClick={() => setShowPdf(false)}
                 className="absolute top-2 right-2 bg-red-600 text-white rounded-full w-8 h-8 flex items-center justify-center shadow hover:bg-red-700 transition"
@@ -90,7 +110,7 @@ export default function Home() {
                 ✕
               </button>
 
-              <div className="w-full h-[600px] border rounded-lg overflow-hidden shadow">
+              <div className="w-full h-[500px] sm:h-[600px] border rounded-lg overflow-hidden shadow">
                 <iframe
                   src="/admission-letter.pdf"
                   className="w-full h-full rounded-lg"
@@ -124,30 +144,55 @@ export default function Home() {
           <div className="space-y-4">
             {/* Airtel Money */}
             <div className="flex items-center gap-3 p-4 border rounded-lg shadow-sm">
-              <Image src="/icons/airtel.png" alt="Airtel" width={40} height={40} />
+              <Image
+                src="/icons/airtel.png"
+                alt="Airtel"
+                width={40}
+                height={40}
+              />
               <div>
                 <p className="font-semibold text-gray-800">Airtel Money</p>
-                <p className="text-gray-600">Agent Code: <strong>1119300</strong></p>
-                <p className="text-gray-600">Number: <strong>0982 734 797</strong></p>
+                <p className="text-gray-600">
+                  Agent Code: <strong>1119300</strong>
+                </p>
+                <p className="text-gray-600">
+                  Number: <strong>0982 734 797</strong>
+                </p>
               </div>
             </div>
 
             {/* TNM Mpamba */}
             <div className="flex items-center gap-3 p-4 border rounded-lg shadow-sm">
-              <Image src="/icons/tnm.png" alt="TNM" width={40} height={40} />
+              <Image
+                src="/icons/tnm.png"
+                alt="TNM"
+                width={40}
+                height={40}
+              />
               <div>
                 <p className="font-semibold text-gray-800">TNM Mpamba</p>
-                <p className="text-gray-600">Agent Code: <strong>123873</strong></p>
-                <p className="text-gray-600">Number: <strong>0897 833 027</strong></p>
+                <p className="text-gray-600">
+                  Agent Code: <strong>123873</strong>
+                </p>
+                <p className="text-gray-600">
+                  Number: <strong>0897 833 027</strong>
+                </p>
               </div>
             </div>
 
             {/* National Bank */}
             <div className="flex items-center gap-3 p-4 border rounded-lg shadow-sm">
-              <Image src="/icons/nbm.png" alt="National Bank" width={40} height={40} />
+              <Image
+                src="/icons/nbm.png"
+                alt="National Bank"
+                width={40}
+                height={40}
+              />
               <div>
                 <p className="font-semibold text-gray-800">National Bank</p>
-                <p className="text-gray-600">Account Number: <strong>1010752015</strong></p>
+                <p className="text-gray-600">
+                  Account Number: <strong>1010752015</strong>
+                </p>
               </div>
             </div>
           </div>
@@ -179,7 +224,7 @@ export default function Home() {
         </section>
       </main>
 
-      {/* Floating WhatsApp Icon Button */}
+      {/* Floating WhatsApp Icon */}
       <a
         href="https://wa.me/265989127308"
         target="_blank"
